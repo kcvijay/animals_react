@@ -5,11 +5,19 @@ import "./App.css";
 
 class App extends Component {
   // state = {
-  //   counter: 0,
+  //   Animals: Animals,
   // };
 
+  // AnimalList = Animals.map((Animal) => {
+  //   <Card />;
+  // });
   render() {
-    return <Card />;
+    return Animals.map((Animal) => (
+      <div className="card">
+        <Card key={Animal.name} name={Animal.name} />
+        {/* {this.AnimalList} */}
+      </div>
+    ));
   }
 }
 

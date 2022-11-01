@@ -1,4 +1,4 @@
-.card-wrapper {
+.card-content {
   max-width: 300px;
   background: rgb(221, 221, 221);
   position: relative;
@@ -6,6 +6,7 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  margin: 1rem;
 }
 
 .close-card {
@@ -19,10 +20,16 @@
   color: #fff;
   font-size: 1rem;
   border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-card:hover {
+  background: #fff;
+  color: #333;
 }
 
 .animal-img {
-  height: 50%;
   width: 300px;
   background-color: gray;
 }
@@ -30,10 +37,14 @@
 .card-detail {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-content: center;
+  padding: 1rem;
+  text-align: center;
 }
 
 .animal-name {
   grid-column: 1 / span 3;
+  text-transform: capitalize;
 }
 
 .likes {
@@ -44,4 +55,5 @@
 
 .likes img {
   width: 2rem;
+  margin-right: 0.5rem;
 }
