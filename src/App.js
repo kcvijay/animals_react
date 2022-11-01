@@ -4,17 +4,17 @@ import Card from "./Card";
 import "./App.css";
 
 class App extends Component {
-  // state = {
-  //   Animals: Animals,
-  // };
+  state = {
+    Animals: Animals,
+  };
 
   // AnimalList = Animals.map((Animal) => {
-  //   <Card />;
+  //   <Card name={Animal.name} likes={Animal.likes} />;
   // });
   render() {
     return Animals.map((Animal) => (
       <div className="card">
-        <Card key={Animal.name} name={Animal.name} />
+        <Card key={Animal.name} name={Animal.name} likes={Animal.likes} />
         {/* {this.AnimalList} */}
       </div>
     ));

@@ -15,13 +15,16 @@ const Card = (props) => {
       ></img>
       <div className="card-detail">
         <h2 className="animal-name">{props.name}</h2>
-        <div className="likes">
-          <img src={LikeIcon} alt={props.name}></img>
-          <div className="likes-counter">0</div>
-        </div>
-        <button className="add-like" onClick={props.addLikes}>
-          Add Likes
-        </button>
+
+        <footer>
+          <div className="likes">
+            <img src={LikeIcon} alt={props.name}></img>
+            <p className="likes-counter">{props.likes}</p>
+          </div>
+          <button className="add-like" onClick={props.addLikes}>
+            Add Likes
+          </button>
+        </footer>
       </div>
     </div>
   );

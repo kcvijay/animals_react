@@ -2,9 +2,7 @@
   max-width: 300px;
   background: rgb(221, 221, 221);
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
   flex-direction: column;
   margin: 1rem;
 }
@@ -13,13 +11,13 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border: none;
-  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
   color: #fff;
-  font-size: 1rem;
-  border-radius: 50%;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -35,25 +33,44 @@
 }
 
 .card-detail {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-content: center;
-  padding: 1rem;
   text-align: center;
 }
 
 .animal-name {
-  grid-column: 1 / span 3;
   text-transform: capitalize;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  background-color: #898989;
 }
 
 .likes {
   display: flex;
   align-items: center;
-  justify-self: flex-start;
+  justify-content: flex-start;
+  justify-self: center;
+  color: #fff;
 }
 
 .likes img {
-  width: 2rem;
+  width: 1.5rem;
   margin-right: 0.5rem;
+  filter: invert(1);
+}
+
+.add-like {
+  background-color: #008080;
+  border: none;
+  border-left: 1px solid #fff;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-like:hover {
+  background-color: #06a1a1;
 }
