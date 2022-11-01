@@ -1,12 +1,16 @@
-import logo from "./logo.svg";
+import React, { Component } from "react";
+import { Animals } from "./Animals.js";
+import Card from "./Card";
 import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header"></header>
-    </div>
-  );
+class App extends Component {
+  // state = {
+  //   counter: 0,
+  // };
+
+  render() {
+    return <Card />;
+  }
 }
 
 export default App;

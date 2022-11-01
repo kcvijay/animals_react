@@ -1,0 +1,47 @@
+.card-wrapper {
+  max-width: 300px;
+  background: rgb(221, 221, 221);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.close-card {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 50%;
+}
+
+.animal-img {
+  height: 50%;
+  width: 300px;
+  background-color: gray;
+}
+
+.card-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.animal-name {
+  grid-column: 1 / span 3;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  justify-self: flex-start;
+}
+
+.likes img {
+  width: 2rem;
+}
