@@ -5,7 +5,7 @@ import "./Card.css";
 const Card = (props) => {
   return (
     <div className="card-content">
-      <button className="close-card" onClick={(e) => e.stopPropagation()}>
+      <button className="close-card" onClick={props.removeCard}>
         X
       </button>
       <img

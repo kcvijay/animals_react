@@ -6,18 +6,35 @@ import "./App.css";
 class App extends Component {
   state = {
     Animals: Animals,
+    likes: 0,
   };
 
-  // AnimalList = Animals.map((Animal) => {
-  //   <Card name={Animal.name} likes={Animal.likes} />;
-  // });
+  addLikes = () => {
+    // this.setState({ likes: this.state.likes + 1 });
+    console.log("Add is clicked");
+  };
+
+  removeCard = (e) => {
+    console.log("Remove this card", e);
+  };
+
+  AnimalList = this.state.Animals.map((Animal) => (
+    <Card
+      key={Animal.name}
+      name={Animal.name}
+      likes={Animal.likes}
+      addLikes={this.addLikes}
+      removeCard={() => this.removeCard(Animal.name)}
+    />
+  ));
+
   render() {
-    return Animals.map((Animal) => (
-      <div className="card">
-        <Card key={Animal.name} name={Animal.name} likes={Animal.likes} />
-        {/* {this.AnimalList} */}
+    return (
+      <div>
+        <h1>Animals</h1>
+        <div className="animalList">{this.AnimalList}</div>
       </div>
-    ));
+    );
   }
 }
 
