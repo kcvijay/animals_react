@@ -7,32 +7,62 @@ class App extends Component {
   state = {
     Animals: Animals,
     likes: 0,
+    value: "",
   };
 
-  addLikes = () => {
-    // this.setState({ likes: this.state.likes + 1 });
-    console.log("Add is clicked");
+  searchHandler = (e) => {
+    this.setState({
+      value: e.target.value,
+    });
   };
 
-  removeCard = (e) => {
-    console.log("Remove this card", e);
+  //If the particular card button is clicked, go in that card's like section, add +1 and update whole animal object.
+  addLikes = (name) => {
+    this.setState((state) => {
+      const updatedArray = state.Animals.map((animal) => {
+        if (animal.name === name) {
+          return { ...animal, likes: animal.likes + 1 };
+        } else {
+          return animal;
+        }
+      });
+      return {
+        Animals: updatedArray,
+      };
+    });
   };
 
-  AnimalList = this.state.Animals.map((Animal) => (
-    <Card
-      key={Animal.name}
-      name={Animal.name}
-      likes={Animal.likes}
-      addLikes={this.addLikes}
-      removeCard={() => this.removeCard(Animal.name)}
-    />
-  ));
+  //Filtering the Animals array with given card's animal name and if found, create an updated array and show every other cards except that card.
+  removeCard = (name) => {
+    const updatedArray = this.state.Animals.filter(
+      (animal) => animal.name !== name
+    );
+    this.setState({ Animals: updatedArray });
+  };
 
   render() {
+    const animalsFilter = this.state.Animals.filter((animal) => {
+      return animal.name.includes(this.state.value);
+    });
+    const AnimalList = animalsFilter.map((Animal) => (
+      <Card
+        key={Animal.name}
+        name={Animal.name}
+        likes={Animal.likes}
+        addLikes={() => this.addLikes(Animal.name)}
+        removeCard={() => this.removeCard(Animal.name)}
+      />
+    ));
     return (
       <div>
-        <h1>Animals</h1>
-        <div className="animalList">{this.AnimalList}</div>
+        <h1>Here are {this.state.Animals.length} Animals</h1>
+        <input
+          type="text"
+          name="search-input"
+          placeholder="Search animals..."
+          onChange={this.searchHandler}
+        />
+        <div className="animalList">{AnimalList}</div>
       </div>
     );
   }

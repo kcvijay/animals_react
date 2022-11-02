@@ -2,6 +2,17 @@ h1 {
   text-align: center;
 }
 
+div {
+  text-align: center;
+}
+
+input {
+  height: 35px;
+  width: 200px;
+  margin-bottom: 10px;
+  font-family: inherit;
+  padding: 0 10px;
+}
 .animalList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
