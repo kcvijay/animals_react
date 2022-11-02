@@ -17,12 +17,15 @@ const Card = (props) => {
         <h2 className="animal-name">{props.name}</h2>
 
         <footer>
+          <button className="add-like" onClick={props.addLikes}>
+            Add Like
+          </button>
           <div className="likes">
             <img src={LikeIcon} alt={props.name}></img>
             <p className="likes-counter">{props.likes}</p>
           </div>
-          <button className="add-like" onClick={props.addLikes}>
-            Add Likes
+          <button className="remove-like" onClick={props.removeLikes}>
+            Remove Like
           </button>
         </footer>
       </div>

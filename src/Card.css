@@ -39,7 +39,7 @@
 
 footer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
   background-color: #898989;
 }
@@ -61,13 +61,24 @@ footer {
 .add-like {
   background-color: #008080;
   border: none;
-  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
   color: #fff;
-  text-transform: uppercase;
+  text-transform: capitalize;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.add-like:hover {
-  background-color: #06a1a1;
+.remove-like {
+  background-color: #e03a0c;
+  border: none;
+  border-left: 1px solid #fff;
+  color: #fff;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-like:hover,
+.remove-like:hover {
+  filter: opacity(0.8);
 }

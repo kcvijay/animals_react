@@ -6,14 +6,30 @@ div {
   text-align: center;
 }
 
-input {
+select {
+  margin: 0 0 10px 0;
+  padding: 0 10px;
   height: 35px;
+  width: 100px;
+  font-family: inherit;
+}
+
+input {
+  height: 40px;
   width: 200px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-family: inherit;
   padding: 0 10px;
+  background-color: #ebebeb;
+  border: none;
+  transition: all 0.1s ease;
 }
-.animalList {
+
+input:focus {
+  outline: 2px solid teal;
+}
+.animalList,
+.birdList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   max-width: 1300px;
